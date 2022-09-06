@@ -2,6 +2,7 @@
 package com.vuelafacil.entidades;
 
 import java.sql.Date;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
@@ -9,10 +10,15 @@ import javax.persistence.Id;
 public class Rutas {
     @Id
     private int id;
+    @Column(length=45, nullable=false, unique=true)
     private String ciudad_origen;
+    @Column(length=45, nullable=false, unique=true)
     private String ciudad_destino;
+    @Column(length=45, nullable=false, unique=true)
     private Date horas_ruta;
+    @Column(length=45, nullable=false, unique=true)
     private int precio_ruta;
+    @Column(length=45, nullable=false, unique=true)
     private int id_aeropuertos;
 
     public Rutas() {
