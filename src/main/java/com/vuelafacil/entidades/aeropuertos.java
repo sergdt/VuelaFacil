@@ -1,18 +1,26 @@
 
 package com.vuelafacil.entidades;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity(name="taeropuertos")
 public class aeropuertos {
   
-    @Id
+    @Id 
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     @Id
+    @Column(length=45, nullable=false, unique=true)
     private String nombre_aeropuerto;
+    @Column(length=45, nullable=false, unique=true)
     private int codigo_dane;
+    @Column(length=45, nullable=false, unique=true)
     private String sigla_aeropuerto;
+    @Column(columnDefinition = "TINYINT", nullable=false)
     private boolean hab;
 
     public aeropuertos() {
